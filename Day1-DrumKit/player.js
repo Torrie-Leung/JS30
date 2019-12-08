@@ -1,4 +1,5 @@
-(function(){
+window.onload = function(){
+  (function(){
   function playHandler(e){
     //play music
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
@@ -26,3 +27,4 @@
   })
   
 })();
+}

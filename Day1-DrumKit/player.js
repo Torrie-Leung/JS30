@@ -10,9 +10,7 @@
     //dom style
     const dom = document.querySelector(`div[data-key="${e.keyCode}"]`)
     if(dom)dom.classList.add('playing')
-    document.querySelectorAll('.key').forEach( key => {
-      key.addEventListener('transitionend',transitionendHandler)
-    })
+    
   }
   
   function transitionendHandler(e){
@@ -20,8 +18,11 @@
       if(e.propertyName === 'transform'|| e.propertyName === 'border-top-color'){
         e.currentTarget.classList.remove('playing')
       }
-    }
+  }
   
   window.addEventListener('keydown',playHandler)
+  document.querySelectorAll('.key').forEach( key => {
+    key.addEventListener('transitionend',transitionendHandler)
+  })
   
 })();

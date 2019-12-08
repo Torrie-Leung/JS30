@@ -16,7 +16,8 @@
   }
   
   function transitionendHandler(e){
-      if(e.propertyName === 'transform'){
+    console.log(e.propertyName)
+      if(e.propertyName === 'transform'|| e.propertyName === 'border-top-color'){
         e.currentTarget.classList.remove('playing')
       }
     }

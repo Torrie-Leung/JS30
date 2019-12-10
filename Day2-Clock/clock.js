@@ -7,8 +7,8 @@
     let data = new Date()
 
     let secDeg = data.getSeconds() * 6// 360/60
-    let minDeg = data.getMinutes() * 6// 360/60
-    let hourDeg = data.getHours() * 30// 360/12
+    let minDeg = data.getMinutes() * 6+data.getSeconds()*6/60// 360/60
+    let hourDeg = data.getHours() * 30+ data.getMinutes() * 30/60// 360/12
 
     sec.style.transform = `rotate(${secDeg}deg)`
     min.style.transform = `rotate(${minDeg}deg)`
@@ -16,4 +16,6 @@
   }
 
   setClock()//initialize
+
+  setInterval(setClock,1000)
 })()

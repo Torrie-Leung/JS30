@@ -19,9 +19,17 @@
     setClock()
     setTimeout(timeoutHandler,1000)
   }
+
+  function animationHandler(){
+    setClock()
+    window.requestAnimationFrame(animationHandler);
+  }
+
   setClock()//initialize
 
   // setInterval(setClock,1000)
 
-  setTimeout(timeoutHandler,1000)
+  // setTimeout(timeoutHandler,1000)
+
+  window.requestAnimationFrame(animationHandler);
 })()

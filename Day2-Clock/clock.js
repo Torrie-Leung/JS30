@@ -15,7 +15,13 @@
     hour.style.transform = `rotate(${hourDeg}deg)`
   }
 
+  function timeoutHandler(){
+    setClock()
+    setTimeout(timeoutHandler,1000)
+  }
   setClock()//initialize
 
-  setInterval(setClock,1000)
+  // setInterval(setClock,1000)
+
+  setTimeout(timeoutHandler,1000)
 })()

@@ -35,7 +35,12 @@
     console.table(answ)
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
-
+    let res = inventors.map(inventor => inventor.first + ' '+ inventor.last)
+    console.table(res)
+    //forEach-需产生array
+    let result = []
+    inventors.forEach(inventor => result.push(inventor.first + ' '+ inventor.last))
+    console.table(result)
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
 

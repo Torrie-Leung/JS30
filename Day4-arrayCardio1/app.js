@@ -47,7 +47,11 @@
     console.table(ans)
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
-
+    let total = 0
+    inventors.forEach((inventor)=>{
+      total += inventor.passed - inventor.year
+    })
+    console.log(total)
     // 5. Sort the inventors by years lived
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name

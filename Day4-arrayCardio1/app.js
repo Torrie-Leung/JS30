@@ -52,6 +52,11 @@
       total += inventor.passed - inventor.year
     })
     console.log(total)
+
+    let tot = inventors.reduce((tot,inventor)=>{
+      return tot + inventor.passed - inventor.year
+    },0)
+    console.log(tot)
     // 5. Sort the inventors by years lived
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name

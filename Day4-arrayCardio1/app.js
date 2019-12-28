@@ -74,7 +74,12 @@
     console.log(ars)
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-
+    let aas = people.sort((a,b) => {
+      let [aFirst,aLast] = a.split(',')
+      let [bFirst,bLast] = b.split('.')
+      return aLast > bLast ? 1 : bLast > aLast ? -1:0
+    })
+    console.table(aas)
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];

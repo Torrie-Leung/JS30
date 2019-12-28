@@ -75,9 +75,9 @@
     // 7. sort Exercise
     // Sort the people alphabetically by last name
     let aas = people.sort((a,b) => {
-      let [aFirst,aLast] = a.split(',')
-      let [bFirst,bLast] = b.split('.')
-      return aLast > bLast ? 1 : bLast > aLast ? -1:0
+      let [aFirst,aLast] = a.split(', ')
+      let [bFirst,bLast] = b.split(', ')
+      return aLast[0] > bLast[0] ? 1 : bLast[0] > aLast[0] ? -1:0
     })
     console.table(aas)
     // 8. Reduce Exercise

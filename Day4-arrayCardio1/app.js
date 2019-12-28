@@ -84,3 +84,15 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    let ree=data.reduce((obj,content)=>{
+      console.log('obj',obj)
+      console.log('contnet',content)
+      if(!obj[content]) obj[content] = 1
+      else obj[content] += 1
+
+      return obj
+    },{})
+
+    console.table(ree)
+
+

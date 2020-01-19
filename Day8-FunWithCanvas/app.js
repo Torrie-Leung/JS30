@@ -30,7 +30,7 @@
   })
 
   canvas.addEventListener('mouseup', () => {
-    
+    drawing = false
   })
 
   // canvas.addEventListener('mouseout', () => {

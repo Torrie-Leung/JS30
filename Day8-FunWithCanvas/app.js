@@ -2,8 +2,9 @@
   let canvas = document.querySelector('#draw')
   let ctx = canvas.getContext('2d')
   let colorDeg = 0
-  ctx.strokeStyle = `hsl(${colorDeg},30%,50%)`
-  ctx.lineWidth = 30
+  let lineWidth = 20
+  ctx.strokeStyle = `hsl(${colorDeg},80%,50%)`
+  ctx.lineWidth = lineWidth 
   ctx.lineCap = 'round'
   ctx.lineJoin = 'round'
   let drawing = false
@@ -20,10 +21,13 @@
   console.log(x,y)
   canvas.addEventListener('mousemove', e => {
     if(!drawing) return;
-    console.log('draw')
+    // console.log('draw')
     colorDeg = colorDeg <360 ? colorDeg + 1 : 0
     ctx.beginPath();
-    ctx.strokeStyle = `hsl(${colorDeg},30%,50%)`
+    ctx.strokeStyle = `hsl(${colorDeg},80%,50%)`
+    lineWidth = lineWidth > 1 ? lineWidth - 1 : 35
+    ctx.lineWidth = lineWidth
+    console.log(lineWidth)
     ctx.moveTo(x, y);
     ctx.lineTo(e.offsetX,e.offsetY)
     x = e.offsetX

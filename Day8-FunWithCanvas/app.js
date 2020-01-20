@@ -3,6 +3,7 @@
   let ctx = canvas.getContext('2d')
   let colorDeg = 0
   let lineWidth = 20
+  let direction = -1
   ctx.strokeStyle = `hsl(${colorDeg},80%,50%)`
   ctx.lineWidth = lineWidth 
   ctx.lineCap = 'round'
@@ -25,7 +26,14 @@
     colorDeg = colorDeg <360 ? colorDeg + 1 : 0
     ctx.beginPath();
     ctx.strokeStyle = `hsl(${colorDeg},80%,50%)`
-    lineWidth = lineWidth > 1 ? lineWidth - 1 : 35
+    // lineWidth = lineWidth > 1 ? lineWidth - 1 : 35
+
+    if(lineWidth < 1 || lineWidth > 50){
+      direction *= -1;
+    }
+    lineWidth += direction
+
+
     ctx.lineWidth = lineWidth
     console.log(lineWidth)
     ctx.moveTo(x, y);

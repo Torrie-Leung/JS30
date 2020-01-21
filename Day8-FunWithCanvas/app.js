@@ -4,7 +4,9 @@
   let colorDeg = 0
   let lineWidth = 20
   let direction = -1
-  ctx.strokeStyle = `hsl(${colorDeg},80%,50%)`
+  let alpha = 1
+  let alphaDirection = 0.1
+  ctx.strokeStyle = `hsl(${colorDeg},30%,0%,${alpha})`
   ctx.lineWidth = lineWidth 
   ctx.lineCap = 'round'
   ctx.lineJoin = 'round'
@@ -23,11 +25,17 @@
   canvas.addEventListener('mousemove', e => {
     if(!drawing) return;
     // console.log('draw')
-    colorDeg = colorDeg <360 ? colorDeg + 1 : 0
+    
     ctx.beginPath();
-    ctx.strokeStyle = `hsl(${colorDeg},80%,50%)`
-    // lineWidth = lineWidth > 1 ? lineWidth - 1 : 35
 
+    if(alpha <= 0.1 || alpha >= 1 ){
+      alphaDirection *= -1;
+    }
+    alpha += alphaDirection
+    console.log(alpha)
+    ctx.strokeStyle = `hsl(${colorDeg},30%,0%,${alpha})`
+    // lineWidth = lineWidth > 1 ? lineWidth - 1 : 35
+    colorDeg = colorDeg <360 ? colorDeg + 1 : 0
     if(lineWidth < 1 || lineWidth > 50){
       direction *= -1;
     }
@@ -35,7 +43,7 @@
 
 
     ctx.lineWidth = lineWidth
-    console.log(lineWidth)
+    // console.log(lineWidth)
     ctx.moveTo(x, y);
     ctx.lineTo(e.offsetX,e.offsetY)
     x = e.offsetX

@@ -55,7 +55,8 @@
     ctx.stroke()
   })
 
-  canvas.addEventListener('mouseup', () => {
+ document.addEventListener('mouseup', () => {
+    down = false
     drawing = false
   })
 
